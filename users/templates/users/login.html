@@ -1,0 +1,42 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Log In - If Media
+{% endblock %}
+{% load static %}
+{% block content %}
+<dev>
+    <link href="{% static 'signup/signup.css' %}" rel="stylesheet" type="text/css">
+    <dev class="row justify-content-center">
+        <dev class="login-box">
+            <dev class="col-md-4 col-sx-12 col-xs-12">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Log In</legend>
+                        {{form | crispy }}
+                    </fieldset>
+                    <dev class="form-group">
+                        <button class="btn btn-dark btn-fluid" type="submit">Submit</button>
+                    </dev>
+                    <dev class="col-md-4 col-sx-12 col-xs-12">
+                        <small class="text-muted">
+                            Forget password ? <a class="ml-2" href="{% url 'password_reset' %}">
+                            Reset Password
+                        </a>
+                        </small>
+                    </dev>
+                </form>
+            </dev>
+            <div class="border-top pt-3">
+                <small class="text-muted ml-2">
+                    Need an Account ? <a class="ml-2" href="{% url 'signup' %}">
+                    Sign Up Now
+                </a>
+                </small>
+            </div>
+        </dev>
+    </dev>
+</dev>
+{% endblock content %}

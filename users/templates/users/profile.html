@@ -1,0 +1,41 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+Profile - E - Library
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-fluid">
+        <img alt=""
+             class="img-rounded img-responsive rounded-circle"
+             src="/media/{{ user.profile.profile_pic }}" style="height: 90px; width: 90px;"/>
+    </div>
+    <div class="col">
+        <div class="border pt-3" style="margin-left:50px; background-color:#1c1c1c; width:450px; padding:15px;">
+            <blockquote>
+                <h4 style="color:white;">{{user.username}}</h4>
+                <div class="border-top pt-3">
+                    <small>
+                        <cite style="color:#afafaf" title="Source Title">
+                            {{user.first_name}} {{user.last_name}}
+                        </cite>
+                    </small>
+                </div>
+            </blockquote>
+            <p>
+                {{user.email}}
+                <br/>
+                <br/>
+            </p>
+        </div>
+        <div class="border mt-3" style="margin-left:50px; background-color:#1c1c1c; width:450px; padding:15px;">
+            <div class="content-center">
+                <a href="#">
+                    <button class="btn btn-dark">Edit profile</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

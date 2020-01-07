@@ -1,0 +1,9 @@
+{% extends "users/base.html" %}
+{% block content %}
+<dev class="content-center" >
+    <div class="text-center" style="width:100%;height:75px; corner-radius:25px;color:black;"><h3>Your account has been activated.</h3></div>
+    <div class="container text-center">
+        <a href="{% url 'login' %}">Sign In here</a>
+    </div>
+</dev>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "users/base.html" %}
+{% block title %}
+Sign up
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<dev >
+    <dev class="row d-flex justify-content-center">
+    <dev class="login-box">
+        <dev class="col-md-4 col-sx-12 col-xs-12"></dev>
+        <dev class="col-md-4 col-sx-12 col-xs-12">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Join Today</legend>
+                    {{form | crispy }}
+                </fieldset>
+                <dev class="form-group">
+                    <button class="btn btn-dark btn-fluid" type="submit">Submit</button>
+                </dev>
+            </form>
+        </dev>
+        <div class="border-top pt-3">
+                <small class="text-muted ml-2">
+                    Already have an Account ? <a class="ml-2" href="{% url 'login' %}">
+                    Log In
+                </a>
+                </small>
+            </div>
+    </dev>
+</dev>
+<dev class="col-md-4 col-sx-12 col-xs-12"></dev>
+</dev>
+{% endblock content %}

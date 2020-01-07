@@ -1,0 +1,22 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+    <div style="height:20px;"></div>
+    <div class="container" style="">
+    <a href="{% url 'add' %}" style="text-decoration:none; padding-left:10px;"> Add new entry </a>
+    </div>
+    <div class="container pt-4">
+        <a style="text-decoration: none; color: black;" href="#">
+        {% for item in diary %}
+            <div class="border" style="border-radius: 5px; padding: 10px; margin: 5px;">
+                <a href="{% url 'add' %}"><div class="float-right"><small>Edit</small></div></a>
+                <strong><em></strong> {{ item.diary_date }} </em></strong><br>
+                <strong> {{ item.diary_title }} </strong></br>
+                <small class="text-muted"> {{ item.diary_content }} </small>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div style="height: 25px;">
+    </div>
+{% endblock %}
